@@ -6,7 +6,7 @@ export const Filter = props => {
 
   const handleChange = event => {
     filter = event.currentTarget.value;
-
+    
     props.onChange(filter);
   };
 

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { nanoid } from 'nanoid'
 import { FormBox, Label, Input, SubmitBtn } from './Form.styled';
 
 export class Form extends Component {
   constructor() {
     super();
     this.state = {
-      id: 'id-1',
+      id: nanoid(),
       name: '',
       number: '',
     };
@@ -21,7 +22,7 @@ export class Form extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.setState({ id: `id-${this.idx + 1}` });
+    this.setState({ id: nanoid() });
     this.props.onSubmit(this.state);
 
     this.resetForm();

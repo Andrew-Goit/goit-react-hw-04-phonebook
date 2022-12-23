@@ -20,6 +20,17 @@ export class App extends Component {
     };
   }
 
+  componentDidMount() {
+    const parsedData = JSON.parse(localStorage.getItem('contactsKey'));
+    if (!parsedData)
+    return;
+    this.setState({contacts: parsedData});
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('contactsKey', JSON.stringify(this.state.contacts));
+  }
+
   formHandlerSubmit = data => {
     this.state.contacts.map(element => {
       if (element.name.toLowerCase() === data.name.toLowerCase()) {
