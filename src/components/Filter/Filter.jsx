@@ -18,7 +18,6 @@ export const Filter = props => {
   );
 };
 
-
 Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
