@@ -8,7 +8,7 @@ import { AppBox } from './App.styled';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    ()=> JSON.parse(window.localStorage.getItem('contactsKey')) ?? ''
+    ()=> JSON.parse(window.localStorage.getItem('contactsKey')) ?? []
     // [
     //   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
     //   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -46,20 +46,6 @@ export const App = () => {
   // const handleChangeFilter = data => {
   //   setFilter({ filter: data });
   // };
-
-  const add = (a, b) => {
-    return a + b;
-  }
-
-  const add1 = (a) => {
-    return a + 1;
-  }
-
-  const add2 = (a) => {
-    return a + 2;
-  }
-
-  add(2,5);
 
   const handleClickDelete = id => {
     setContacts(contacts.filter(element => element.id !== id))
