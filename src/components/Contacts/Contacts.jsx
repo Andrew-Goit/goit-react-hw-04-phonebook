@@ -8,13 +8,13 @@ import {
 } from './Contacts.styled';
 
 export const Contacts = props => {
-  const { data, filter } = props;
+  const { data, filter, onDelete } = props;
   let filterData = data.filter(element => {
     return element.name.toLowerCase().includes(filter);
   });
 
   const onHandleClick = event => {
-    props.onDelete(event.currentTarget.id);
+    onDelete(event.currentTarget.id);
   };
 
   if (!filterData.length) 

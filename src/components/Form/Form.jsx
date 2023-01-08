@@ -8,8 +8,6 @@ export const Form = props => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-// this.idx = 1;
-  
   const handleChange = event => {
     const { name, value } = event.currentTarget;
     switch (name) {
