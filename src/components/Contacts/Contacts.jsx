@@ -8,7 +8,7 @@ import {
 } from './Contacts.styled';
 
 export const Contacts = props => {
-  const { data, filter, onDelete } = props;
+  const { data, filter, onDelete} = props;
   let filterData = data.filter(element => {
     return element.name.toLowerCase().includes(filter);
   });
